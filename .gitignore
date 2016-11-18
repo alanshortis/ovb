@@ -1,0 +1,11 @@
+.DS_Store
+composer.phar
+vendor
+wp
+wp-config.php
+wp-content/upgrade
+wp-content/uploads
+wp-content/plugins/*
+!wp-content/plugins/index.php
+wp-content/mu-plugins/*
+!wp-content/mu-plugins/index.php
