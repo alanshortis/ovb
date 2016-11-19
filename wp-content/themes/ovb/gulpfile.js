@@ -15,15 +15,11 @@ const pkg = require('./package.json'),
 
 const options = {
   "src": {
-    "src": "src",
     "sass": "src/sass/**/*.scss",
-    "img": "src/img",
-    "icons": "src/img/icons/*.svg",
     "js": "src/js"
   },
   "dest" : {
     "css": "",
-    "img": "img",
     "js": "js"
   }
 };
