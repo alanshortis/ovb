@@ -87,15 +87,16 @@ gulp.task('uglify', ['js'], () => {
 
 // Remove generated assets.
 gulp.task('clean', () => {
-  return del.sync(['style.css', 'js', 'img']);
+  return del.sync(['./style.*', 'js']);
 });
 
 
 // Watch for changes.
 gulp.task('watch', () => {
   gulp.watch(options.src.sass, ['css']);
+  gulp.watch(options.src.js, ['js']);
 });
 
 
 // Default task.
-gulp.task('default', ['clean', 'css']);
+gulp.task('default', ['clean', 'minify', 'uglify']);
