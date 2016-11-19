@@ -1,2 +1,6 @@
 .sass-cache
-node_modules
+/node_modules
+/img
+/js
+/style.*
+/app.*
