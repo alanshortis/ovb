@@ -13,15 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{site.theme.link}}/style.css">
   </head>
-  <body class="{{body_class}}">
+  <body>
+    <div class="stripe"></div>
     <nav>
       {% include "menus/main-menu.twig" with {'menu': main_menu.get_items} %}
     </nav>
     {% block content %}
       Sorry, no content
     {% endblock %}
-    <nav>
-      {% include "menus/social-menu.twig" with {'menu': social_menu.get_items} %}
-    </nav>
   </body>
 </html>
