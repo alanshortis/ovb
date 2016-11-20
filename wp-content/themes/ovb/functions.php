@@ -7,7 +7,6 @@ class OvbCycling extends TimberSite {
 		add_filter('timber_context', array($this, 'add_to_context'));
     add_filter('upload_mimes', array($this, 'custom_mtypes'));
 		add_action('init', array($this, 'register_post_types'));
-		add_action('init', array($this, 'register_taxonomies'));
     add_action('init', array($this, 'register_my_menus'));
     add_action('admin_menu', array($this, 'remove_menu_items'));
 
@@ -16,56 +15,36 @@ class OvbCycling extends TimberSite {
 
 	function register_post_types() {
   	register_post_type(
-      'people',
+      'routes',
       array(
     		'labels' => array(
-      		'name' => _x('People', 'post type general name'),
-      		'singular_name' => _x('Person', 'post type singular name'),
-      		'add_new' => _x('Add New', 'Person'),
-      		'add_new_item' => __('Add New Person'),
-      		'edit_item' => __('Edit Person'),
-      		'new_item' => __('New Person'),
-      		'view_item' => __('View People'),
-      		'search_items' => __('Search People'),
-      		'not_found' =>  __('Nothing found'),
-      		'not_found_in_trash' => __('Nothing found in Bin'),
+      		'name' => _x('Routes', 'post type general name'),
+      		'singular_name' => _x('Route', 'post type singular name'),
+      		'add_new' => _x('Add New', 'Route'),
+      		'add_new_item' => __('Add New Route'),
+      		'edit_item' => __('Edit Route'),
+      		'new_item' => __('New Route'),
+      		'view_item' => __('View Route'),
+      		'search_items' => __('Search Routes'),
+      		'not_found' =>  __('No routes found'),
+      		'not_found_in_trash' => __('No routes found in Bin'),
       		'parent_item_colon' => ''
       	),
-        'has_archive' => true,
+        'has_archive' => false,
     		'public' => true,
     		'publicly_queryable' => true,
     		'show_ui' => true,
     		'query_var' => true,
-    		'menu_icon' => 'dashicons-admin-users',
+    		'menu_icon' => 'dashicons-location-alt',
     		'rewrite' => true,
     		'capability_type' => 'page',
     		'hierarchical' => false,
     		'rewrite' => array(
-    			'slug' => 'people',
+    			'slug' => 'route',
     		 	'with_front' => false
     		),
     		'menu_position' => null,
-    		'supports' => array('title', 'editor', 'page-attributes')
-    	)
-    );
-	}
-
-	function register_taxonomies() {
-    register_taxonomy(
-      'person_type', 'people', array(
-    		'labels' => array(
-      		'name' => _x('Person Type', 'taxonomy general name'),
-      		'singular_name' => _x('Person Type', 'taxonomy singular name'),
-      		'search_items' => __('Search Person Types'),
-      		'all_items' => __('All Person Types'),
-      		'edit_item' => __('Edit Person Type'),
-      		'update_item' => __('Update Person Type'),
-      		'add_new_item' => __('Add New Person Type'),
-      		'new_item_name' => __('New Person Type'),
-      		'menu_name' => __('Person Type')
-      	),
-    		'hierarchical' => true,
-    		'rewrite' => array('slug' => 'work')
+    		'supports' => array('title', 'editor')
     	)
     );
 	}
@@ -73,8 +52,7 @@ class OvbCycling extends TimberSite {
   function register_my_menus() {
   	register_nav_menus(
   		array(
-  			'main-menu' => __('Main Menu'),
-        'social-menu' => __('Social Menu')
+  			'main-menu' => __('Main Menu')
   		)
   	);
   }
@@ -86,6 +64,7 @@ class OvbCycling extends TimberSite {
 
   function remove_menu_items(){
     remove_menu_page('edit-comments.php'); // Hide comment menu item.
+    remove_menu_page('edit.php'); // Hide posts menu item.
   }
 
 	function add_to_context( $context ) {
