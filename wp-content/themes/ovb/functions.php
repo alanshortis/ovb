@@ -1,6 +1,6 @@
 <?php
 
-class WordPressBoilerplate extends TimberSite {
+class OvbCycling extends TimberSite {
 
 	function __construct() {
 		add_theme_support('menus');
@@ -10,21 +10,6 @@ class WordPressBoilerplate extends TimberSite {
 		add_action('init', array($this, 'register_taxonomies'));
     add_action('init', array($this, 'register_my_menus'));
     add_action('admin_menu', array($this, 'remove_menu_items'));
-
-    // Remove junk from head.
-    remove_action('wp_head', 'rsd_link');
-    remove_action('wp_head', 'wp_generator');
-    remove_action('wp_head', 'rel_canonical');
-    remove_action('wp_head', 'feed_links', 2);
-    remove_action('wp_head', 'index_rel_link');
-    remove_action('wp_head', 'wlwmanifest_link');
-    remove_action('wp_head', 'feed_links_extra', 3);
-    remove_action('wp_head', 'start_post_rel_link', 10, 0);
-    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
-    remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-    remove_action('wp_print_styles', 'print_emoji_styles' );
-    remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
-    remove_action('wp_head', 'print_emoji_detection_script', 7 );
 
 		parent::__construct();
 	}
@@ -112,4 +97,4 @@ class WordPressBoilerplate extends TimberSite {
 	}
 }
 
-new WordPressBoilerplate();
+new OvbCycling();
