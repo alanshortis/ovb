@@ -5,5 +5,13 @@
   <h6>{{post.get_field('testing')}}</h6>
 	<div>
 		{{post.content}}
+    <p>{{key}}
 	</div>
+  <div>
+    {% for photo in ig_feed.data %}
+      <a href="{{photo.link}}">
+        <img src="{{photo.images.thumbnail.url}}" alt="ovbcycling on Instagram">
+      </a>
+    {% endfor %}
+  </div>
 {% endblock %}
