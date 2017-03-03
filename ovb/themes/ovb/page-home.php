@@ -5,7 +5,7 @@
 */
 
 
-$ig_feed = json_decode(file_get_contents("https://api.instagram.com/v1/users/1473021812/media/recent/?access_token=" . IG_TOKEN . "&count=9"));
+$ig_feed = json_decode(file_get_contents("https://api.instagram.com/v1/users/1473021812/media/recent/?access_token=" . getenv('IG_API') . "&count=9"));
 
 
 

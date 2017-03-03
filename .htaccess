@@ -10,3 +10,9 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+# Block access to the environment variables and the template.
+<FilesMatch ".env|.env.example">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
