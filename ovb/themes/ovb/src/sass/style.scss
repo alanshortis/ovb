@@ -1,17 +1,24 @@
 @import 'tools/functions';
-@import 'settings/settings';
+
+@import 'settings/generic';
+@import 'settings/color';
+@import 'settings/type';
+@import 'settings/z-index';
+
 @import 'tools/mixins';
 
-@import 'generic/box-sizing';
 @import 'generic/reset';
 @import 'generic/form-reset';
 
-@import 'base/root';
+@import 'base/base';
 @import 'base/type';
+
+@import 'objects/grid';
 
 @import 'components/header';
 @import 'components/footer';
-@import 'components/grid';
+@import 'components/icons';
 @import 'components/nav';
+@import 'components/insta';
 
 @import 'trumps/helpers';

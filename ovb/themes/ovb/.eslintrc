@@ -1,0 +1,13 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "script"
+  },
+  "rules": {
+    "semi": 2,
+    "indent": [2, 2, {'VariableDeclarator': {'var': 2, 'let': 2, 'const': 3}}],
+    "camelcase": 2,
+    "no-unused-vars": 1,
+    "no-delete-var": 2
+  }
+}

@@ -2,5 +2,4 @@
 /node_modules
 /img
 /js
-/style.*
-/app.*
+/*.css
