@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" {{site.language_attributes}}>
+<html {{site.language_attributes}}>
   <head>
     <meta charset="{{site.charset}}">
     <title>
@@ -11,7 +11,7 @@
     </title>
     <meta name="description" content="{{site.description}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{site.theme.link}}/style.css">
+    {{wp_head()}}
   </head>
   <body>
     <div class="stripe"></div>
@@ -21,5 +21,6 @@
     {% block content %}
       Sorry, no content
     {% endblock %}
+    {{wp_footer()}}
   </body>
 </html>

@@ -12,7 +12,7 @@ RewriteRule . /index.php [L]
 # END WordPress
 
 # Block access to the environment variables and the template.
-<FilesMatch ".env|.env.example">
+<FilesMatch ".env|.env.example|xmlrpc.php">
   Order allow,deny
   Deny from all
 </FilesMatch>
