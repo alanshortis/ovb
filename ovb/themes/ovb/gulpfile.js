@@ -35,13 +35,7 @@ const path = {
 
 
 // Header comment for theme CSS and for minified assets.
-const cssHeader = `/*\n
-                  Theme Name: ${pkg.name}\n
-                  Description: ${pkg.description}\n
-                  Author: ${pkg.author}\n
-                  Version: ${pkg.version}\n
-                  */\n\n`;
-
+const cssHeader = `/*\nTheme Name: ${pkg.name}\nDescription: ${pkg.description}\nAuthor: ${pkg.author}\nVersion: ${pkg.version}\n*/\n\n`;
 const minifiedHeader = `/* ${pkg.name} ${pkg.version} | ${new Date()} */\n`;
 
 

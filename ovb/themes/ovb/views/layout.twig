@@ -14,13 +14,21 @@
     {{wp_head()}}
   </head>
   <body>
-    <div class="stripe"></div>
-    <nav>
-      {% include "menus/main-menu.twig" with {'menu': main_menu.get_items} %}
+    <header class="site-header">
+      This is the header.
+    </header>
+    <nav class="main-menu">
+      <a class="js--anchor" href="#about">About</a>
+      <a class="js--anchor" href="#racing">Racing</a>
+      <a class="js--anchor" href="#ethos">Ethos</a>
+      <a class="js--anchor" href="#membership">Membership</a>
     </nav>
     {% block content %}
       Sorry, no content
     {% endblock %}
+    <footer class="site-footer">
+      This is the footer.
+    </footer>
     {{wp_footer()}}
   </body>
 </html>

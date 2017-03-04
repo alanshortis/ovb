@@ -1,17 +1,25 @@
-{% extends "base.twig" %}
+{% extends "layout.twig" %}
 
 {% block content %}
-	<h2>{{post.title}}</h2>
-  <h6>{{post.get_field('testing')}}</h6>
-	<div>
-		{{post.content}}
-    <p>{{key}}
-	</div>
-  <div>
+	<section class="space" id="about">
+	  <p>About</p>
+	</section>
+  <section class="space">
     {% for photo in ig_feed.data %}
-      <a href="{{photo.link}}">
-        <img src="{{photo.images.thumbnail.url}}" alt="ovbcycling on Instagram">
-      </a>
+      <p>
+        <a href="{{photo.link}}">
+          <img src="{{photo.images.thumbnail.url}}" alt="ovbcycling on Instagram">
+        </a>
+      </p>
     {% endfor %}
-  </div>
+  </section>
+  <section class="space" id="racing">
+	  <p>Racing</p>
+	</section>
+  <section class="space" id="ethos">
+	  <p>Ethos</p>
+	</section>
+  <section class="space" id="membership">
+	  <p>Membership</p>
+	</section>
 {% endblock %}

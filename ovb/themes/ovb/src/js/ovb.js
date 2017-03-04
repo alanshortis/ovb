@@ -1,6 +1,3 @@
-// Require your modules.
-// You can also require from node_modules directly: require('leaflet').
-var example = require('./modules/_example');
+var anchors = require('./modules/_anchors');
 
-// Invoke a function exported from your required module.
-example.greeting();
+anchors.listen();
