@@ -131,11 +131,11 @@ gulp.task('icons', () => {
 
 
 gulp.task('clean', () => {
-  return del.sync([path.dest.js, `${path.dest.css}/*.css`, path.dest.icons]);
+  return del.sync([path.dest.js, `${path.dest.css}/*.css`, `${path.dest.icons}/*.svg`]);
 });
 
 
-gulp.task('watch', () => {
+gulp.task('watch', ['css', 'js', 'icons'], () => {
   browserSync.init({
     proxy: 'http://ovb.local',
     files: ['./**/*.php', './**/*.twig']
