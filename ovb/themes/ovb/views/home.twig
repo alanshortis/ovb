@@ -1,25 +1,41 @@
 {% extends "layout.twig" %}
 
 {% block content %}
+  <section class="space">
+    <p>Image</p>
+  </section>
 	<section class="space" id="about">
 	  <p>About</p>
 	</section>
   <section class="space">
+    <p>Image</p>
+  </section>
+  <section class="space" id="ethos">
+	  <p>Ethos</p>
+	</section>
+  <section class="space">
     {% for photo in ig_feed.data %}
-      <p>
-        <a href="{{photo.link}}">
-          <img src="{{photo.images.thumbnail.url}}" alt="ovbcycling on Instagram">
-        </a>
-      </p>
+      <a href="{{photo.link}}">
+        <img src="{{photo.images.thumbnail.url}}" alt="ovbcycling on Instagram">
+      </a>
     {% endfor %}
   </section>
   <section class="space" id="racing">
 	  <p>Racing</p>
 	</section>
-  <section class="space" id="ethos">
-	  <p>Ethos</p>
+  <section class="space">
+	  <p>Image</p>
+	</section>
+  <section class="space">
+	  <p>Image</p>
+	</section>
+  <section class="space">
+	  <p>Stats</p>
 	</section>
   <section class="space" id="membership">
 	  <p>Membership</p>
+	</section>
+  <section class="space">
+	  <p>How we ride</p>
 	</section>
 {% endblock %}

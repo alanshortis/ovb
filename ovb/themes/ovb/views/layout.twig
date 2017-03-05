@@ -14,13 +14,16 @@
     {{wp_head()}}
   </head>
   <body>
+    <div class="is-hidden">
+      {% include "icons.svg" %}
+    </div>
     <header class="site-header">
       This is the header.
     </header>
     <nav class="main-menu">
       <a class="js--anchor" href="#about">About</a>
-      <a class="js--anchor" href="#racing">Racing</a>
       <a class="js--anchor" href="#ethos">Ethos</a>
+      <a class="js--anchor" href="#racing">Racing</a>
       <a class="js--anchor" href="#membership">Membership</a>
     </nav>
     {% block content %}
