@@ -1,9 +1,3 @@
-/**
- * Scrolls smoothly to a defined element.
- * @param {String} element - The HTML ID of the element to scroll to.
- * @param {Number} dutation - How long the scroll should take.
- * @param {Number} topOffSet - Number of pixels above the defined element to scroll to.
- */
 function scroll(element, duration, topOffSet) {
   topOffSet = (!topOffSet) ? 0 : topOffSet;
 	var startingY = window.pageYOffset,
@@ -32,5 +26,5 @@ function scroll(element, duration, topOffSet) {
 
 
 module.exports = {
-  scroll
+  scroll: scroll
 };

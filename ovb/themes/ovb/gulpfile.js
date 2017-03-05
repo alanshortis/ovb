@@ -19,7 +19,6 @@ const del = require('del');
 const browserSync = require('browser-sync').create();
 
 
-// Paths to sources and built assets.
 const path = {
   src: {
     sass: './src/sass',
@@ -29,17 +28,15 @@ const path = {
   dest: {
     css: './',
     js: './js',
-    icons: './icons'
+    icons: './views'
   }
 };
 
 
-// Header comment for theme CSS and for minified assets.
 const cssHeader = `/*\nTheme Name: ${pkg.name}\nDescription: ${pkg.description}\nAuthor: ${pkg.author}\nVersion: ${pkg.version}\n*/\n\n`;
 const minifiedHeader = `/* ${pkg.name} ${pkg.version} | ${new Date()} */\n`;
 
 
-// CSS: Build from SASS, add prefixes and sourcemaps.
 gulp.task('css', ['sasslint'], () => {
   return gulp.src(`${path.src.sass}/**/*.scss`)
     .pipe(sass({outputStyle: 'expanded'}))
@@ -59,7 +56,6 @@ gulp.task('css', ['sasslint'], () => {
 });
 
 
-// Lint our SASS files. See '.sass-lint.yml' for rules.
 gulp.task('sasslint', () => {
   return gulp.src(`${path.src.sass}/**/*.scss`)
     .pipe(sassLint())
@@ -74,7 +70,6 @@ gulp.task('sasslint', () => {
 });
 
 
-// Minify CSS.
 gulp.task('minify', ['css'], () => {
   return gulp.src(`${path.dest.css}/style.css`)
     .pipe(rename({
@@ -86,7 +81,6 @@ gulp.task('minify', ['css'], () => {
 });
 
 
-// JavaScript: Build from partials, add sourcemaps.
 gulp.task('js', ['eslint'], () => {
   return browserify({entries: `${path.src.js}/ovb.js`, extensions: ['.js'], debug: true})
     .bundle()
@@ -98,7 +92,6 @@ gulp.task('js', ['eslint'], () => {
 });
 
 
-// Lint our JavaScript. See '.eslintrc' for rules.
 gulp.task('eslint', () => {
   return gulp.src(['gulpfile.js', `${path.src.js}/*.js`])
     .pipe(eslint())
@@ -113,7 +106,6 @@ gulp.task('eslint', () => {
 });
 
 
-// Uglify JavaScript.
 gulp.task('uglify', ['js'], () => {
   return gulp.src([`${path.dest.js}/*.js`, `!${path.dest.js}/*.min.js`])
     .pipe(rename({
@@ -125,7 +117,6 @@ gulp.task('uglify', ['js'], () => {
 });
 
 
-// Make an SVG sprite from individual icons.
 gulp.task('icons', () => {
   return gulp.src(`${path.src.icons}/*.svg`)
     .pipe(svgo({
@@ -139,22 +130,19 @@ gulp.task('icons', () => {
 });
 
 
-// Delete generated content.
 gulp.task('clean', () => {
   return del.sync([path.dest.js, `${path.dest.css}/*.css`, path.dest.icons]);
 });
 
 
-// Watch for changes and update with browserSync.
 gulp.task('watch', () => {
   browserSync.init({
     proxy: 'http://ovb.local',
-    files: ['./**/*.php', './**/*.twig'] // Inject HTML when PHP or twig files change.
+    files: ['./**/*.php', './**/*.twig']
   });
   gulp.watch(`${path.src.sass}/**/*.scss`, ['css']); //
   gulp.watch(`${path.src.js}/**/*.js`, ['js']);
 });
 
 
-// Do it all (except watch).
 gulp.task('default', ['clean', 'minify', 'uglify', 'icons']);

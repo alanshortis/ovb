@@ -19,5 +19,5 @@ function count() {
 
 
 module.exports = {
-  count
+  count: count
 };
