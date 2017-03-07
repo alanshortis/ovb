@@ -3,6 +3,7 @@
 class OvbCycling extends TimberSite {
 
 	function __construct() {
+    acf_add_options_page(array('page_title' => 'Theme Options', 'position' => 20, 'icon_url' => 'dashicons-admin-settings'));
 		add_theme_support('menus');
 		add_filter('timber_context', array($this, 'add_to_context'));
     add_action('admin_menu', array($this, 'remove_menu_items'));
