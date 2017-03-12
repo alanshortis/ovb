@@ -64,7 +64,9 @@ class OvbCycling extends TimberSite {
 
 	function add_to_context( $context ) {
 		$context['menu'] = new TimberMenu();
+    $context['options'] = get_fields('options');
 		$context['site'] = $this;
+
 		return $context;
 	}
 }

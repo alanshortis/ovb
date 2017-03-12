@@ -30,7 +30,39 @@
       Sorry, no content
     {% endblock %}
     <footer class="site-footer">
-      This is the footer.
+      Chairman {{options.chairman}}
+      Communication Director {{options.communications_director}}
+      Scretary {{options.secretary}}
+      Treasurer {{options.treasurer}}
+      Race Captain {{options.race_captain}}
+      Road Captain {{options.road_captain}}
+      Social Secretary {{options.social_secretary}}
+
+      General enquiries <a href="mailto:{{options.general_enquiries}}">{{options.general_enquiries}}</a>
+      Racing enquiries <a href="{{options.racing}}">{{options.racing}}</a>
+      Membership enquiries <a href="{{options.membership}}">{{options.membership}}</a>
+
+
+      <a href="{{options.facebook}}">
+        <svg class="icon icon--social" role="presentation">
+          <use xlink:href="#icon-facebook">
+        </svg>
+      </a>
+      <a href="{{options.twitter}}">
+        <svg class="icon icon--social" role="presentation">
+          <use xlink:href="#icon-twitter">
+        </svg>
+      </a>
+      <a href="{{options.instagram}}">
+        <svg class="icon icon--social" role="presentation">
+          <use xlink:href="#icon-instagram">
+        </svg>
+      </a>
+      <a href="{{options.strava}}">
+        <svg class="icon icon--social" role="presentation">
+          <use xlink:href="#icon-strava">
+        </svg>
+      </a>
     </footer>
     {{wp_footer()}}
   </body>
