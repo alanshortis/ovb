@@ -6,6 +6,19 @@
   "repository": "https://github.com/alanshortis/ovb",
   "author": "Alan Shortis",
   "license": "MIT",
+  "paths": {
+    "src": {
+      "sass": "./src/sass",
+      "js": "./src/js",
+      "icons": "./src/icons"
+    },
+    "dest": {
+      "dest": "./",
+      "css": "./css",
+      "js": "./js",
+      "icons": "./icons"
+    }
+  },
   "scripts": {
     "build": "gulp",
     "deploy": "gulp deploy",
