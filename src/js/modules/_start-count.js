@@ -1,10 +1,9 @@
-var count = require('../utilities/_count');
-
+const count = require('../utilities/_count');
 
 function startCount() {
-  count.count();
+  const elements = document.querySelectorAll('.js--stat');
+  elements.forEach(element => count.countUp(element));
 }
-
 
 module.exports = {
   listen: startCount

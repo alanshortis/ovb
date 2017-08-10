@@ -1,24 +1,14 @@
-function _countUp(numberElement) {
-  var current = 0;
-  var total = parseInt(numberElement.innerHTML);
-  var countSpeed = Math.abs(Math.floor(100 / total));
-  var timer = setInterval(function countIt() {
+function countUp(numberElement) {
+  let current = 0;
+  const total = parseInt(numberElement.textContent);
+  const countSpeed = Math.abs(Math.floor(100 / total));
+  const timer = setInterval(function countIt() {
     current += 1;
     numberElement.innerHTML = current.toLocaleString();
     (current == total) && clearInterval(timer);
   }, countSpeed);
 }
 
-
-function count() {
-  console.log('start count');
-  var elements = document.querySelectorAll('.js--stat');
-  for (var i = 0; i < elements.length; i++) {
-    _countUp(elements[i]);
-  }
-}
-
-
 module.exports = {
-  count: count
+  countUp: countUp
 };

@@ -1,21 +1,17 @@
-function scroll(element, duration, topOffSet) {
-  topOffSet = (!topOffSet) ? 0 : topOffSet;
-	var startingY = window.pageYOffset,
-      elementY = (window.pageYOffset + document.querySelector(element).getBoundingClientRect().top) - topOffSet,
-	    diff = elementY - startingY,
-      easing = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 },
-      start;
+function scroll(element, duration, topOffSet = 0) {
+	const startingY = window.pageYOffset;
+  const elementY = (window.pageYOffset + document.querySelector(element).getBoundingClientRect().top) - topOffSet;
+	const diff = elementY - startingY;
+  const easing = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 };
+  let start;
 
-  if (diff <= 0.5 && diff >= -0.5)
-    return;
+  if (diff <= 0.5 && diff >= -0.5) return;
 
 	window.requestAnimationFrame(function step(timestamp) {
-    if (!start) {
+    if (!start)
       start = timestamp;
-    }
-
-    var time = timestamp - start,
-        percent = easing(Math.min(time / duration, 1));
+    const time = timestamp - start;
+    const percent = easing(Math.min(time / duration, 1));
 
     window.scrollTo(0, startingY + diff * percent)
     if (time < duration) {
