@@ -1,12 +1,6 @@
 .DS_Store
-.env
-*.phar
-vendor
-wp
-ovb/languages
-ovb/upgrade
-ovb/uploads
-ovb/plugins/*
-!ovb/plugins/index.php
-ovb/mu-plugins/*
-!ovb/mu-plugins/index.php
+.sass-cache
+node_modules
+img
+js
+css
