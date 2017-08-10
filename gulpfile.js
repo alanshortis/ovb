@@ -8,6 +8,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const sourcemaps = require('gulp-sourcemaps');
 const browserify = require('browserify');
+const babelify = require('babelify');
 const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
 const svgo = require('gulp-svgo');
@@ -68,7 +69,12 @@ gulp.task('minify', ['css'], () => {
 
 
 gulp.task('js', ['eslint'], () => {
-  return browserify({entries: `${paths.src.js}/ovb.js`, extensions: ['.js'], debug: true})
+  return browserify({
+    entries: `${paths.src.js}/ovb.js`,
+    extensions: ['.js'],
+    debug: true
+  })
+    .transform(babelify)
     .bundle()
     .pipe(source('ovb.js'))
     .pipe(buffer())
