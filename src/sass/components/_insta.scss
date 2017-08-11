@@ -1,0 +1,8 @@
+.spinner {
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  border: .25rem solid $spinner--track;
+  border-top-color: $spinner;
+  animation: spin .75s infinite linear;
+}

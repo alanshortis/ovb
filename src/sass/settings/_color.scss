@@ -1,10 +1,4 @@
-$color: (
-  background--menu: #cccccc,
-);
+$background--menu: #cccccc;
 
-@function color($value) {
-  @if map-has-key($color, $value) {
-    @return map-get($color, $value);
-  }
-  @warn 'Requested colour is not included in the $color map.';
-}
+$spinner: rgb(30, 30, 30);
+$spinner--track: rgba($spinner, .25);
