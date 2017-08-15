@@ -1,7 +1,5 @@
 const anchors = require('./modules/_anchors');
-const count = require('./modules/_count');
-const instagram = require('./modules/_instagram');
+const scrollIn = require('./modules/_scroll-in');
 
 anchors.listen();
-count.go();
-instagram.feed();
+scrollIn.listen();

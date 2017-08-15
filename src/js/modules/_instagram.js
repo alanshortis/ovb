@@ -8,7 +8,12 @@ function _gramHtml(link, thumb) {
   `;
 }
 
+let fired = false;
+
 function igFeed() {
+  if (fired) return;
+  fired = true;
+
   const user = 1473021812;
   const token = '1473021812.4c0225d.aaa48611504b4784b7e9cae49f95554c';
   const count = 9;
@@ -30,5 +35,5 @@ function igFeed() {
 }
 
 module.exports = {
-  feed: igFeed
+  go: igFeed
 };
