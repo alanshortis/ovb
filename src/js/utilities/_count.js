@@ -1,12 +1,15 @@
 function countUp(numberElement) {
   let current = 0;
   const total = parseInt(numberElement.textContent);
-  const countSpeed = Math.abs(Math.floor(100 / total));
-  const timer = setInterval(function countIt() {
-    current += 1;
-    numberElement.innerHTML = current.toLocaleString();
-    (current == total) && clearInterval(timer);
-  }, countSpeed);
+  const increment = Math.ceil(total / 100);
+
+  function step() {
+    current += increment;
+    if (current > total) current = total;
+    numberElement.textContent = current.toLocaleString();
+    (current !== total) && requestAnimationFrame(step);
+  }
+  step();
 }
 
 module.exports = {
