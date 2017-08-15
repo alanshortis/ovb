@@ -2,7 +2,7 @@ function scroll(element, duration, topOffSet = 0) {
 	const startingY = window.pageYOffset;
   const elementY = (window.pageYOffset + document.querySelector(element).getBoundingClientRect().top) - topOffSet;
 	const diff = elementY - startingY;
-  const easing = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 };
+  const easing = (t) => t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1;
   let start;
 
   if (diff <= 0.5 && diff >= -0.5) return;
