@@ -1,3 +1,5 @@
+global.iScrolling = false;
+
 const anchors = require('./modules/_anchors');
 const scrollIn = require('./modules/_scroll-in');
 

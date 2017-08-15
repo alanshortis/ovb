@@ -7,7 +7,7 @@ function scroll(element, duration, topOffSet = 0) {
 
   if (diff <= 0.5 && diff >= -0.5) return;
 
-	window.requestAnimationFrame(function step(timestamp) {
+  window.requestAnimationFrame(function step(timestamp) {
     if (!start)
       start = timestamp;
     const time = timestamp - start;
@@ -16,6 +16,11 @@ function scroll(element, duration, topOffSet = 0) {
     window.scrollTo(0, startingY + diff * percent)
     if (time < duration) {
       window.requestAnimationFrame(step)
+    }
+    else {
+      setTimeout(function () {
+        global.isScrolling = false;
+      }, 100);
     }
   });
 }
