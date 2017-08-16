@@ -152,7 +152,7 @@ gulp.task('deploy', () => {
     password: args.password,
     log: gutil.log
   });
-  gulp.src(['.htaccess', 'index.html', '404.html', 'css/*', 'js/*'], {buffer: false, dot: false, base: './'})
+  gulp.src(['.htaccess', 'index.html', '404.html', 'css/*', 'js/*', 'fonts/*'], {buffer: false, dot: false, base: './'})
     .pipe(conn.dest(remotePath));
 });
 
