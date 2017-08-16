@@ -13,6 +13,7 @@ const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
 const svgo = require('gulp-svgo');
 const svgstore = require('gulp-svgstore');
+const svginject = require('gulp-inject-svg');
 const rename = require('gulp-rename');
 const header = require('gulp-header');
 const notifier = require('node-notifier');
@@ -112,7 +113,7 @@ gulp.task('uglify', ['js'], () => {
 
 
 gulp.task('icons', () => {
-  return gulp.src(`${paths.src.icons}/*.svg`)
+  return gulp.src(`${paths.src.svg}/*.svg`)
     .pipe(svgo({
       plugins: [{removeStyleElement: true}]
     }))
@@ -120,16 +121,23 @@ gulp.task('icons', () => {
       prefix: 'icon-'
     }))
     .pipe(svgstore())
-    .pipe(gulp.dest(paths.dest.icons));
+    .pipe(gulp.dest(paths.src.src));
+});
+
+
+gulp.task('html', ['icons'], () => {
+  return gulp.src(`${paths.src.src}/*.html`)
+    .pipe(svginject({base: './src/'}))
+    .pipe(gulp.dest(paths.dest.dest));
 });
 
 
 gulp.task('clean', () => {
-  return del.sync([paths.dest.js, paths.dest.css, paths.dest.icons]);
+  return del.sync([paths.dest.js, paths.dest.css, `${paths.dest.dest}*.html`, `${paths.src.src}*.svg`]);
 });
 
 
-gulp.task('watch', ['css', 'js', 'icons'], () => {
+gulp.task('watch', ['css', 'js', 'html'], () => {
   browserSync.init({
     server: {
       baseDir: paths.dest.dest,
@@ -138,8 +146,9 @@ gulp.task('watch', ['css', 'js', 'icons'], () => {
       }
     }
   });
-  gulp.watch(`${paths.src.sass}/**/*.scss`, ['css']); //
+  gulp.watch(`${paths.src.sass}/**/*.scss`, ['css']);
   gulp.watch(`${paths.src.js}/**/*.js`, ['js']);
+  gulp.watch(`${paths.src.src}/**/*.html`, ['html']);
 });
 
 
@@ -152,9 +161,12 @@ gulp.task('deploy', () => {
     password: args.password,
     log: gutil.log
   });
-  gulp.src(['.htaccess', 'index.html', '404.html', 'css/*', 'js/*', 'fonts/*'], {buffer: false, dot: false, base: './'})
+  gulp.src(
+      ['.htaccess', 'index.html', '404.html', 'css/*', 'js/*', 'fonts/*'],
+      {buffer: false, dot: false, base: './'}
+    )
     .pipe(conn.dest(remotePath));
 });
 
 
-gulp.task('default', ['clean', 'minify', 'uglify', 'icons']);
+gulp.task('default', ['clean', 'minify', 'uglify', 'html']);

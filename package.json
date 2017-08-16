@@ -8,15 +8,15 @@
   "license": "MIT",
   "paths": {
     "src": {
+      "src": "./src",
       "sass": "./src/sass",
       "js": "./src/js",
-      "icons": "./src/icons"
+      "svg": "./src/svg"
     },
     "dest": {
       "dest": "./",
       "css": "./css",
-      "js": "./js",
-      "icons": "./icons"
+      "js": "./js"
     }
   },
   "scripts": {
@@ -35,6 +35,7 @@
     "gulp-cssnano": "^2.1.2",
     "gulp-eslint": "^3.0.1",
     "gulp-header": "^1.8.8",
+    "gulp-inject-svg": "^0.1.15",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.0.0",
     "gulp-sass-lint": "^1.3.2",
