@@ -42,8 +42,11 @@
     "gulp-svgo": "^1.0.3",
     "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8",
+    "minimist": "^1.2.0",
     "node-notifier": "^4.6.1",
     "vinyl-buffer": "^1.0.0",
+    "vinyl-ftp": "^0.6.0",
     "vinyl-source-stream": "^1.1.0"
   }
 }

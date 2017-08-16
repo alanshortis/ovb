@@ -18,6 +18,8 @@ const header = require('gulp-header');
 const notifier = require('node-notifier');
 const buffer = require('vinyl-buffer');
 const source = require('vinyl-source-stream');
+const gutil = require('gulp-util');
+const ftp = require('vinyl-ftp');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 
@@ -138,6 +140,20 @@ gulp.task('watch', ['css', 'js', 'icons'], () => {
   });
   gulp.watch(`${paths.src.sass}/**/*.scss`, ['css']); //
   gulp.watch(`${paths.src.js}/**/*.js`, ['js']);
+});
+
+
+gulp.task('deploy', () => {
+  const args = minimist = require('minimist')(process.argv.slice(2));
+  const remotePath = '/websites/ovbcycling.com/test/';
+  const conn = ftp.create({
+    host: args.host,
+    user: args.user,
+    password: args.password,
+    log: gutil.log
+  });
+  gulp.src(['./.htaccess', './index.html', './css', './js'], {buffer: false, dot: false})
+    .pipe(conn.dest(remotePath));
 });
 
 
