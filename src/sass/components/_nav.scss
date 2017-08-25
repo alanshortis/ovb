@@ -2,7 +2,7 @@
   display: flex;
   position: sticky;
   top: 0;
-  padding: .5rem 0;
+  height: $nav-height;
   background-color: $white;
   justify-content: center;
   align-items: center;
@@ -18,17 +18,5 @@
   }
   &__link {
     text-decoration: none;
-    &--green {
-      color: $ovb--green;
-    }
-    &--grey {
-      color: $ovb-grey;
-    }
-    &--blue {
-      color: $ovb-blue;
-    }
-    &--purple {
-      color: $ovb-purple;
-    }
   }
 }

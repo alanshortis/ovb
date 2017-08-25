@@ -1,4 +1,26 @@
 body {
+  // sass-lint:disable-block no-vendor-prefixes
   position: relative;
+  box-sizing: border-box;
   background-color: $white;
+  font-family: $font-serif;
+  font-weight: 400;
+  font-size: $base-font-size;
+  line-height: 1.5;
+  color: $black;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  &--footer {
+    display: flex;
+    flex-direction: column;
+    @include mq(medium) {
+      flex-direction: row;
+    }
+  }
 }
