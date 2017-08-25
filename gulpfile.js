@@ -154,7 +154,7 @@ gulp.task('watch', ['css', 'js', 'html'], () => {
 
 gulp.task('deploy', () => {
   const args = minimist = require('minimist')(process.argv.slice(2));
-  const remotePath = '/websites/ovbcycling.com/test/';
+  const remotePath = '/websites/short.is/ovb/';
   const conn = ftp.create({
     host: args.host,
     user: args.user,
