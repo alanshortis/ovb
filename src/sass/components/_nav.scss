@@ -1,7 +1,34 @@
 .main-menu {
+  display: flex;
   position: sticky;
   top: 0;
-  width: 100%;
-  height: $menu-height;
-  background: $background--menu;
+  padding: .5rem 0;
+  background-color: $white;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-sans ;
+  font-weight: 600;
+  &__menu {
+    list-style: none;
+  }
+  &__item {
+    display: inline;
+    margin: 0 1.25rem;
+    text-transform: uppercase;
+  }
+  &__link {
+    text-decoration: none;
+    &--green {
+      color: $ovb--green;
+    }
+    &--grey {
+      color: $ovb-grey;
+    }
+    &--blue {
+      color: $ovb-blue;
+    }
+    &--purple {
+      color: $ovb-purple;
+    }
+  }
 }
