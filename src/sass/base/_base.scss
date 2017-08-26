@@ -30,4 +30,10 @@ body {
     max-width: ($max-width / 2);
     text-align: center;
   }
+  &--left {
+    max-width: ($max-width / 2);
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 ($content-margin * 6);
+  }
 }

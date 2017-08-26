@@ -1,14 +1,19 @@
 .space {
   display: flex;
-  justify-content: center;
   align-items: center;
   min-height: calc(100vh - #{$nav-height});
   padding: $content-margin;
+  @include mq(medium) {
+    padding: ($content-margin * 3) $content-margin;
+  }
   &--dark {
     background: $background--dark;
     color: $white;
   }
   &--mid {
     background: $background--mid;
+  }
+  &--start {
+    align-items: flex-start;
   }
 }
