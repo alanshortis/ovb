@@ -1,8 +1,8 @@
-function _gramHtml(link, thumb) {
+function _gramHtml(link, thumb, largeThumb) {
   return `
     <li>
       <a href="${link}">
-        <img src="${thumb}" alt="@ovbcycling on Instagram">
+        <img src="${thumb}" srcset="${largeThumb} 2x" alt="@ovbcycling on Instagram">
       </a>
     </li>
   `;
@@ -16,7 +16,7 @@ function igFeed() {
 
   const user = 1473021812;
   const token = '1473021812.4c0225d.aaa48611504b4784b7e9cae49f95554c';
-  const count = 9;
+  const count = 6;
   const grams = [];
   const gramContainer = document.getElementById('js-instagram');
 
@@ -27,7 +27,7 @@ function igFeed() {
       grams.forEach(gram => {
         gramContainer.insertAdjacentHTML(
           'beforeend',
-          _gramHtml(gram.link, gram.images.thumbnail.url)
+          _gramHtml(gram.link, gram.images.low_resolution.url, gram.images.standard_resolution.url)
         );
       });
       document.getElementById('js-spinner').style.display = 'none';
