@@ -18,10 +18,9 @@ function igFeed() {
   const token = '1473021812.4c0225d.aaa48611504b4784b7e9cae49f95554c';
   const count = 6;
   const gramContainer = document.getElementById('js-instagram');
-  let maxId, scriptElement;
+  let maxId, scriptElement, requests;
 
   window._renderGrams = (response) => {
-    maxId = response.data[5].id;
     const grams = response.data;
     grams.forEach(gram => {
       gramContainer.insertAdjacentHTML(
@@ -33,14 +32,9 @@ function igFeed() {
     document.getElementById('js-load-more').style.display = 'block';
   }
 
-  function _getGrams() {
-    scriptElement = document.createElement('script');
-    scriptElement.setAttribute('src', `https://api.instagram.com/v1/users/${user}/media/recent/?access_token=${token}&count=${count}&max_id=${maxId}&callback=_renderGrams` );
-    document.body.appendChild(scriptElement);
-  }
-  _getGrams();
-
-  document.getElementById('js-load-more').addEventListener('click', _getGrams);
+  scriptElement = document.createElement('script');
+  scriptElement.setAttribute('src', `https://api.instagram.com/v1/users/${user}/media/recent/?access_token=${token}&count=${count}&max_id=${maxId}&callback=_renderGrams` );
+  document.body.appendChild(scriptElement);
 }
 
 module.exports = {
