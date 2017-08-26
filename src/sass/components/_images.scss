@@ -13,6 +13,7 @@
     fill: $ovb-grey;
     width: 100%;
     max-width: 250px;
+    height: 32px; // TODO: Fix this magic number
     margin-top: $content-margin;
   }
 }
