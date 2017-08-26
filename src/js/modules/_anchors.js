@@ -6,7 +6,7 @@ function anchorClick() {
     link.addEventListener('click', e => {
       e.preventDefault();
       global.isScrolling = true;
-      smoothScroll.scroll(link.getAttribute('href'), 500, 60);
+      smoothScroll.scroll(link.getAttribute('href'), 500, 40);
     });
   });
 }
