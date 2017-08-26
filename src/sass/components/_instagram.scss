@@ -8,6 +8,8 @@
   &__item {
     margin: 0;
     margin-bottom: $content-margin;
+    animation: fade-in 1s;
+    opacity: 1;
     @include mq(small) {
       margin: ($content-margin / 2);
     }
@@ -22,11 +24,10 @@
   display: none;
   border: 1px solid $ovb-green;
   background: $white;
+  color: $ovb-green;
   font-family: $font-sans;
   text-transform: uppercase;
   padding: ($content-margin / 2) $content-margin;
   margin-top: ($content-margin * 2);
-  a {
-    color: $ovb-green;
-  }
+  cursor: pointer;
 }
