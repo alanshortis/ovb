@@ -22,6 +22,12 @@
       background-repeat: no-repeat;
     }
   }
+  &--bleed {
+    padding: $content-margin 0;
+    @include mq(medium) {
+      padding: ($content-margin * 3) $content-margin;
+    }
+  }
 }
 
 .container {

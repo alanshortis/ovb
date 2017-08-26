@@ -8,6 +8,6 @@ body {
   font-size: $base-font-size;
   line-height: 1.5;
   color: $black;
-  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

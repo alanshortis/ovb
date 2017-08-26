@@ -1,10 +1,10 @@
 function _gramHtml(link, thumb, largeThumb) {
   return `
-    <li>
+    <div class="gram-grid__item">
       <a href="${link}">
         <img src="${thumb}" srcset="${largeThumb} 2x" alt="@ovbcycling on Instagram">
       </a>
-    </li>
+    </div>
   `;
 }
 
@@ -31,6 +31,7 @@ function igFeed() {
         );
       });
       document.getElementById('js-spinner').style.display = 'none';
+      document.getElementById('js-load-more').style.display = 'block';
     });
 }
 

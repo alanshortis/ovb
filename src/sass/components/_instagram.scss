@@ -1,0 +1,32 @@
+.gram-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include mq(medium) {
+    margin-top: ($content-margin * 2);
+  }
+  &__item {
+    margin: 0;
+    margin-bottom: $content-margin;
+    @include mq(small) {
+      margin: ($content-margin / 2);
+    }
+    img {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+}
+
+.load-more-grams {
+  display: none;
+  border: 1px solid $ovb-green;
+  background: $white;
+  font-family: $font-sans;
+  text-transform: uppercase;
+  padding: ($content-margin / 2) $content-margin;
+  margin-top: ($content-margin * 2);
+  a {
+    color: $ovb-green;
+  }
+}
