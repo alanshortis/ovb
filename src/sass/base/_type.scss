@@ -1,12 +1,27 @@
+p {
+  margin-bottom: $content-margin;
+}
+
 a {
+  color: $ovb-blue;
   text-decoration: none;
   transition: color $transition__speed $transition__timing;
 }
 
+h1,
+h2,
 h3 {
   text-transform: uppercase;
   font-family: $font-sans;
   font-weight: $font-weight--bold;
-  font-size: 1.125rem;
+  font-size: 3rem;
   margin-bottom: $content-margin;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.125rem;
 }
