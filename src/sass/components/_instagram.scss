@@ -15,7 +15,7 @@
     }
     img {
       width: 100%;
-      max-width: 320px;
+      max-width: 300px;
     }
   }
 }
@@ -28,6 +28,9 @@
   font-family: $font-sans;
   text-transform: uppercase;
   padding: ($content-margin / 2) $content-margin;
-  margin-top: ($content-margin * 2);
+  margin-top: $content-margin;
   cursor: pointer;
+  @include mq(medium) {
+    margin-top: ($content-margin * 2);
+  }
 }
