@@ -8,13 +8,11 @@ a {
   transition: color $transition__speed $transition__timing;
 }
 
-h1,
 h2,
 h3 {
   text-transform: uppercase;
   font-family: $font-sans;
   font-weight: $font-weight--bold;
-  font-size: 3rem;
   margin-bottom: $content-margin;
 }
 

@@ -6,6 +6,11 @@
   @include mq(medium) {
     padding: ($content-margin * 3) $content-margin;
   }
+  &--natural {
+    min-height: 0;
+    padding: 0;
+    justify-content: center;
+  }
   &--dark {
     background: $background--dark;
     color: $white;
