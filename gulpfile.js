@@ -162,7 +162,7 @@ gulp.task('deploy', () => {
     log: gutil.log
   });
   gulp.src(
-      ['.htaccess', 'index.html', '404.html', 'css/*', 'js/*', 'fonts/*'],
+      ['.htaccess', 'index.html', '404.html', 'css/*', 'js/*', 'fonts/*', 'img/*'],
       {buffer: false, dot: false, base: './'}
     )
     .pipe(conn.dest(remotePath));
