@@ -57,7 +57,7 @@ rules:
       include: true
       allow-single-line-rulesets: false
   no-duplicate-properties:
-    - 2
+    - 1
     -
       exclude: [border, margin, padding]
   class-name-format:

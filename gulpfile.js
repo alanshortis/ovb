@@ -11,6 +11,7 @@ const browserify = require('browserify');
 const babelify = require('babelify');
 const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
 const svgo = require('gulp-svgo');
 const svgstore = require('gulp-svgstore');
 const svginject = require('gulp-inject-svg');
@@ -125,6 +126,13 @@ gulp.task('icons', () => {
 });
 
 
+gulp.task('images', () => {
+  return gulp.src(`${paths.src.img}/*`)
+    .pipe(imagemin())
+    .pipe(gulp.dest(paths.dest.img));
+});
+
+
 gulp.task('html', ['icons'], () => {
   return gulp.src(`${paths.src.src}/*.html`)
     .pipe(svginject({base: './src/'}))
@@ -169,4 +177,4 @@ gulp.task('deploy', () => {
 });
 
 
-gulp.task('default', ['clean', 'minify', 'uglify', 'html']);
+gulp.task('default', ['clean', 'minify', 'uglify', 'images', 'html']);

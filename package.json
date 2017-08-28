@@ -11,12 +11,14 @@
       "src": "./src",
       "sass": "./src/sass",
       "js": "./src/js",
-      "svg": "./src/svg"
+      "svg": "./src/svg",
+      "img": "./src/img"
     },
     "dest": {
       "dest": "./",
       "css": "./css",
-      "js": "./js"
+      "js": "./js",
+      "img": "./img"
     }
   },
   "scripts": {
@@ -35,6 +37,7 @@
     "gulp-cssnano": "^2.1.2",
     "gulp-eslint": "^3.0.1",
     "gulp-header": "^1.8.8",
+    "gulp-imagemin": "^3.3.0",
     "gulp-inject-svg": "^0.1.15",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.0.0",
