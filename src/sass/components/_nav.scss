@@ -1,5 +1,5 @@
 .main-menu {
-  display: flex;
+  display: none;
   position: sticky;
   top: 0;
   height: $nav-height;
@@ -8,6 +8,10 @@
   align-items: center;
   font-family: $font-sans ;
   font-weight: 600;
+  z-index: 1;
+  @include mq(small) {
+    display: flex;
+  }
   &__menu {
     list-style: none;
   }
