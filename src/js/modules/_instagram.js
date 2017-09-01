@@ -15,7 +15,7 @@ function igFeed() {
   fired = true;
 
   const user = 1473021812;
-  const token = '1473021812.4c0225d.aaa48611504b4784b7e9cae49f95554c';
+  const token = '1473021812.9826de0.ceed01805c6a40b0a0680473956f8a6a';
   const count = 6;
   const gramContainer = document.getElementById('js-instagram');
   let maxId, scriptElement, requests;
