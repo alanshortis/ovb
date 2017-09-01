@@ -17,7 +17,7 @@
     font-family: $font-sans;
     font-weight: $font-weight--bold;
     font-size: 8vw;
-    text-shadow: 0 0 100px $very-black;
+    text-shadow: 0 0 50px $very-black;
     animation: fade-in 1s;
     opacity: 1;
     content: attr(data-intro);
