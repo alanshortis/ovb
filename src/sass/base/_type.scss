@@ -8,6 +8,20 @@ a {
   transition: color $transition__speed $transition__timing;
 }
 
+h1 {
+  text-transform: uppercase;
+  font-family: $font-sans;
+  font-weight: $font-weight--bold;
+  color: $white;
+  font-size: 8vw;
+  text-shadow: 0 0 50px $very-black;
+  animation: fade-in 1s;
+  opacity: 1;
+  @include mq(medium) {
+    font-size: 5vw;
+  }
+}
+
 h2,
 h3 {
   text-transform: uppercase;
