@@ -5,7 +5,7 @@
   padding: $content-margin;
   &:first-of-type {
     justify-content: center;
-    min-height: calc(100vh - #{$header-height});
+    min-height: calc(50vh - #{$header-height});
     @include mq(small) {
       min-height: calc(100vh - #{$nav-height + $header-height});
     }
@@ -35,9 +35,12 @@
   &--cover {
     padding: 0;
     background-size: cover;
-    background-position: center center;
+    background-position: left center;
     background-image: url('../img/brinkley.jpg');
     min-height: 50vh;
+    @include mq(medium) {
+      min-height: calc(100vh - #{$nav-height});
+    }
   }
   &--bleed {
     padding: $content-margin 0;
