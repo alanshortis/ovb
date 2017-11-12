@@ -1,15 +1,20 @@
 .space {
   display: flex;
   align-items: center;
-  min-height: calc(100vh - #{$nav-height});
+  min-height: 100vh;
   padding: $content-margin;
+  &:first-of-type {
+    justify-content: center;
+    min-height: calc(100vh - #{$header-height});
+    @include mq(small) {
+      min-height: calc(100vh - #{$nav-height + $header-height});
+    }
+  }
   @include mq(medium) {
     padding: ($content-margin * 3) $content-margin;
   }
-  &--natural {
-    min-height: 0;
-    padding: 0;
-    justify-content: center;
+  @include mq(small) {
+    min-height: calc(100vh - #{$nav-height});
   }
   &--dark {
     background: $background--dark;
@@ -26,6 +31,13 @@
       background-position: bottom right;
       background-repeat: no-repeat;
     }
+  }
+  &--cover {
+    padding: 0;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('../img/brinkley.jpg');
+    min-height: 50vh;
   }
   &--bleed {
     padding: $content-margin 0;
