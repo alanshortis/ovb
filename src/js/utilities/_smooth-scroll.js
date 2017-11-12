@@ -1,7 +1,7 @@
 function scroll(element, duration, topOffSet = 0) {
-	const startingY = window.pageYOffset;
+  const startingY = window.pageYOffset;
   const elementY = (window.pageYOffset + document.querySelector(element).getBoundingClientRect().top) - topOffSet;
-	const diff = elementY - startingY;
+  const diff = elementY - startingY;
   const easing = (t) => t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1;
   let start;
 
@@ -16,11 +16,6 @@ function scroll(element, duration, topOffSet = 0) {
     window.scrollTo(0, startingY + diff * percent)
     if (time < duration) {
       window.requestAnimationFrame(step)
-    }
-    else {
-      setTimeout(function () {
-        global.isScrolling = false;
-      }, 100);
     }
   });
 }

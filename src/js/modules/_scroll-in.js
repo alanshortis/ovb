@@ -1,4 +1,3 @@
-const count = require('./_count');
 const instagram = require('./_instagram');
 
 
