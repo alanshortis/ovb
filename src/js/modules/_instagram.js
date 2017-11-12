@@ -1,4 +1,4 @@
-function _gramHtml(link, thumb, largeThumb) {
+function _gramTemplate(link, thumb, largeThumb) {
   return `
     <div class="gram-grid__item">
       <a href="${link}">
@@ -8,11 +8,8 @@ function _gramHtml(link, thumb, largeThumb) {
   `;
 }
 
-let fired = false;
 
 function igFeed() {
-  if (fired) return;
-  fired = true;
 
   const user = 1473021812;
   const token = '1473021812.9826de0.ceed01805c6a40b0a0680473956f8a6a';
@@ -25,7 +22,7 @@ function igFeed() {
     grams.forEach(gram => {
       gramContainer.insertAdjacentHTML(
         'beforeend',
-        _gramHtml(gram.link, gram.images.low_resolution.url, gram.images.standard_resolution.url)
+        _gramTemplate(gram.link, gram.images.low_resolution.url, gram.images.standard_resolution.url)
       );
     });
     document.getElementById('js-spinner').style.display = 'none';
@@ -38,5 +35,5 @@ function igFeed() {
 }
 
 module.exports = {
-  go: igFeed
+  load: igFeed
 };

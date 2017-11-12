@@ -1,5 +1,2 @@
-const anchors = require('./modules/_anchors');
-const scrollIn = require('./modules/_scroll-in');
-
-anchors.listen();
-scrollIn.listen();
+require('./modules/_anchors').listen();
+require('./modules/_instagram').load();
