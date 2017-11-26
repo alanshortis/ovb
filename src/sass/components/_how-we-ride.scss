@@ -1,0 +1,20 @@
+.ride-grid {
+  display: grid;
+  grid-template-columns: 250px;
+  grid-gap: ($content-margin * 2);
+  margin-top: $content-margin;
+  @include mq(medium) {
+    grid-template-columns: repeat(2, 250px);
+  }
+  @include mq(large) {
+    grid-template-columns: repeat(3, 250px);
+  }
+}
+
+.how-we-ride {
+  text-align: center;
+  p {
+    font-size: .9rem;
+    color: $ovb-grey;
+  }
+}

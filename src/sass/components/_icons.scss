@@ -1,8 +1,27 @@
 .icon {
+  &--how {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto;
+    margin-bottom: $content-margin;
+  }
   &--social {
     fill: $type--off-white;
     width: 2rem;
     height: 2rem;
-    margin-left: 0.25rem;
+    margin-left: ($content-margin / 2);
+  }
+  &--green {
+    fill: $ovb-green;
+  }
+  &--blue {
+    fill: $ovb-blue;
+  }
+  &--purple {
+    fill: $ovb-purple;
+  }
+  &--grey {
+    fill: $ovb-grey;
   }
 }
