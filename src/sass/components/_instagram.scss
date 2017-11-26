@@ -1,13 +1,24 @@
-.gram-grid {
+.ig-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: $gram-width;
   grid-gap: $content-margin;
+  margin-top: $content-margin;
   @include mq(medium) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, $gram-width);
   }
   @include mq(large) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, $gram-width);
   }
+}
+
+.spinner {
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  border: .25rem solid $spinner--track;
+  border-top-color: $spinner;
+  margin-top: $content-margin;
+  animation: spin .75s infinite linear;
 }
 
 .load-more-grams {

@@ -21,9 +21,7 @@ function amstergram() {
     const grams = response.data;
     grams.forEach(gram => {
 
-      // The thumbnail URL contains a parameter to crop the images,
-      // so we use that and replace the dimensions.
-      // This is an undocumented feature of the Instageam API.
+      // The thumbnail URL contains a parameter to crop the images so we use that and replace the dimensions.
       let thumb = gram.images.thumbnail.url.replace('s150x150/', 's320x320/');
       let thumb2x = gram.images.thumbnail.url.replace('s150x150/', 's640x640/');
 
