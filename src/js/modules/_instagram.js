@@ -1,6 +1,6 @@
 function _gramTemplate(link, thumb, thumb2x) {
   return `
-    <div class="gram-grid__item">
+    <div>
       <a href="${link}">
         <img src="${thumb}" srcset="${thumb2x} 2x" alt="@ovbcycling on Instagram">
       </a>

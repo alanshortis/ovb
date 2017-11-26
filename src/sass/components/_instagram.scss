@@ -1,22 +1,12 @@
 .gram-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: $content-margin;
   @include mq(medium) {
-    margin-top: ($content-margin * 2);
+    grid-template-columns: repeat(2, 1fr);
   }
-  &__item {
-    margin: 0;
-    margin-bottom: $content-margin;
-    animation: fade-in 1s;
-    opacity: 1;
-    @include mq(small) {
-      margin: ($content-margin / 2);
-    }
-    img {
-      width: 100%;
-      max-width: 300px;
-    }
+  @include mq(large) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
