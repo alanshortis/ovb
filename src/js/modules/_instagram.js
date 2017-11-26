@@ -1,77 +1,45 @@
-function fetchFeed() {
-  const user = 1473021812;
-  const token = '1473021812.9826de0.ceed01805c6a40b0a0680473956f8a6a';
-  const count = 6;
-  const amstergram = `https://api.instagram.com/v1/users/${user}/media/recent/?access_token=${token}&count=${count}`;
-
-  const grams = [];
-  fetch(amstergram)
-    .then(feed => feed.json())
-    .then(feed => grams.push(...feed.data))
-    .then(() => console.log(grams));
+function _gramTemplate(link, thumb, thumb2x) {
+  return `
+    <div class="gram-grid__item">
+      <a href="${link}">
+        <img src="${thumb}" srcset="${thumb2x} 2x" alt="@ovbcycling on Instagram">
+      </a>
+    </div>
+  `;
 }
 
 
+function amstergram() {
+
+  const user = 1473021812;
+  const token = '1473021812.9826de0.ceed01805c6a40b0a0680473956f8a6a';
+  const count = 6;
+  const gramContainer = document.getElementById('js-instagram');
+  const scriptElement = document.createElement('script');
+
+  window._renderGrams = (response) => {
+    const grams = response.data;
+    grams.forEach(gram => {
+
+      // The thumbnail URL contains a parameter to crop the images,
+      // so we use that and replace the dimensions.
+      // This is an undocumented feature of the Instageam API.
+      let thumb = gram.images.thumbnail.url.replace('s150x150/', 's320x320/');
+      let thumb2x = gram.images.thumbnail.url.replace('s150x150/', 's640x640/');
+
+      gramContainer.insertAdjacentHTML(
+        'beforeend',
+        _gramTemplate(gram.link, thumb, thumb2x)
+      );
+    });
+    document.getElementById('js-spinner').style.display = 'none';
+    document.getElementById('js-load-more').style.display = 'block';
+  }
+
+  scriptElement.setAttribute('src', `https://api.instagram.com/v1/users/${user}/media/recent/?access_token=${token}&count=${count}&callback=_renderGrams` );
+  document.body.appendChild(scriptElement);
+}
+
 module.exports = {
-  load: fetchFeed
+  load: amstergram
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function _gramTemplate(link, thumb, largeThumb) {
-//   return `
-//     <div class="gram-grid__item">
-//       <a href="${link}">
-//         <img src="${thumb}" srcset="${largeThumb} 2x" alt="@ovbcycling on Instagram">
-//       </a>
-//     </div>
-//   `;
-// }
-
-
-// function igFeed() {
-
-//   const user = 1473021812;
-//   const token = '1473021812.9826de0.ceed01805c6a40b0a0680473956f8a6a';
-//   const count = 6;
-//   const gramContainer = document.getElementById('js-instagram');
-//   let maxId, scriptElement, requests;
-
-//   window._renderGrams = (response) => {
-//     const grams = response.data;
-//     grams.forEach(gram => {
-//       gramContainer.insertAdjacentHTML(
-//         'beforeend',
-//         _gramTemplate(gram.link, gram.images.low_resolution.url, gram.images.standard_resolution.url)
-//       );
-//     });
-//     document.getElementById('js-spinner').style.display = 'none';
-//     document.getElementById('js-load-more').style.display = 'block';
-//   }
-
-//   scriptElement = document.createElement('script');
-//   scriptElement.setAttribute('src', `https://api.instagram.com/v1/users/${user}/media/recent/?access_token=${token}&count=${count}&max_id=${maxId}&callback=_renderGrams` );
-//   document.body.appendChild(scriptElement);
-// }
-
-// module.exports = {
-//   load: igFeed
-// };
