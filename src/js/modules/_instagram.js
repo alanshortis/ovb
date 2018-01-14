@@ -18,12 +18,9 @@ export function amstergram() {
 
   window._renderGrams = response => {
     response.data.forEach(gram => {
-      const thumb = gram.images.low_resolution.url;
-      const thumb2x = gram.images.standard_resolution.url;
-
       gramContainer.insertAdjacentHTML(
         'beforeend',
-        _gramTemplate(gram.link, thumb, thumb2x)
+        _gramTemplate(gram.link, gram.images.low_resolution.url, gram.images.standard_resolution.url)
       );
     });
     document.getElementById('js-spinner').style.display = 'none';
