@@ -1,15 +1,11 @@
-const smoothScroll = require('../utilities/_smooth-scroll');
+import {smoothScroll} from '../utilities/_smooth-scroll';
 
-function anchorClick() {
+export function anchorClick() {
   const anchorLinks = document.querySelectorAll('.js--anchor');
   anchorLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
-      smoothScroll.scroll(link.getAttribute('href'), 500, 60);
+      smoothScroll(link.getAttribute('href'), 500, 60);
     });
   });
 }
-
-module.exports = {
-  listen: anchorClick
-};

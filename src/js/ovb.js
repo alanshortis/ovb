@@ -1,2 +1,5 @@
-require('./modules/_anchors').listen();
-require('./modules/_instagram').load();
+import {anchorClick} from './modules/_anchors';
+anchorClick();
+
+import {amstergram} from './modules/_instagram';
+amstergram();
