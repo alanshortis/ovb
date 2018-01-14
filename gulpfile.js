@@ -1,5 +1,5 @@
 const pkg = require('./package.json');
-const paths = pkg.paths;
+const {paths} = pkg;
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
@@ -89,7 +89,7 @@ gulp.task('js', ['eslint'], () => {
 
 
 gulp.task('eslint', () => {
-  return gulp.src(['gulpfile.js', `${paths.src.js}/*.js`])
+  return gulp.src(['gulpfile.js', `${paths.src.js}/**/*.js`])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
@@ -161,7 +161,7 @@ gulp.task('watch', ['css', 'js', 'html'], () => {
 
 
 gulp.task('deploy', () => {
-  const args = minimist = require('minimist')(process.argv.slice(2));
+  const args = require('minimist')(process.argv.slice(2));
   const remotePath = '/websites/short.is/ovb/';
   const conn = ftp.create({
     host: args.host,
