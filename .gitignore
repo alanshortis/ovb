@@ -2,10 +2,7 @@
 .DS_Store
 .sass-cache
 /node_modules
-/img
-/js
-/css
-/icons
+/dist
 /src/svg.svg
 /index.html
 /404.html

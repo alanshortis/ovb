@@ -133,6 +133,12 @@ gulp.task('images', () => {
 });
 
 
+gulp.task('fonts', () => {
+  return gulp.src(`${paths.src.fonts}/*`)
+    .pipe(gulp.dest(paths.dest.fonts));
+});
+
+
 gulp.task('html', ['icons'], () => {
   return gulp.src(`${paths.src.src}/*.html`)
     .pipe(svginject({base: './src/'}))
@@ -141,7 +147,7 @@ gulp.task('html', ['icons'], () => {
 
 
 gulp.task('clean', () => {
-  return del.sync([paths.dest.js, paths.dest.css, `${paths.dest.dest}*.html`, `${paths.src.src}*.svg`]);
+  return del.sync([paths.dest.dest]);
 });
 
 
@@ -177,4 +183,4 @@ gulp.task('deploy', () => {
 });
 
 
-gulp.task('default', ['clean', 'minify', 'uglify', 'images', 'html']);
+gulp.task('default', ['clean', 'minify', 'uglify', 'images', 'html', 'fonts']);

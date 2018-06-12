@@ -12,13 +12,15 @@
       "sass": "./src/sass",
       "js": "./src/js",
       "svg": "./src/svg",
-      "img": "./src/img"
+      "img": "./src/img",
+      "fonts": "./src/fonts"
     },
     "dest": {
-      "dest": "./",
-      "css": "./css",
-      "js": "./js",
-      "img": "./img"
+      "dest": "./dist",
+      "css": "./dist/css",
+      "js": "./dist/js",
+      "img": "./dist/img",
+      "fonts": "./dist/fonts"
     }
   },
   "scripts": {
