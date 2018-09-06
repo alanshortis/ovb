@@ -1,0 +1,7 @@
+@function strip-units($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function px-to-em($value) {
+  @return (strip-units($value) / strip-units($base-font-size)) * 1em;
+}

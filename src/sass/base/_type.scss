@@ -1,0 +1,44 @@
+p {
+  margin-bottom: $content-margin;
+}
+
+a {
+  color: $ovb-blue;
+  text-decoration: none;
+  transition: color $transition__speed $transition__timing;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: $font-sans;
+  font-weight: $font-weight--bold;
+  color: $white;
+  font-size: 8vw;
+  text-shadow: 0 0 50px $very-black;
+  animation: fade-in 1s;
+  opacity: 1;
+  @include mq(medium) {
+    font-size: 5vw;
+  }
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  font-family: $font-sans;
+  font-weight: $font-weight--bold;
+  margin-bottom: $content-margin;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: .9rem;
+}

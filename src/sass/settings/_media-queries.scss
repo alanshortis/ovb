@@ -1,0 +1,5 @@
+$media-queries: (
+  large: (min-width: px-to-em(1200px)),
+  medium: (min-width: px-to-em(850px)),
+  small: (min-width: px-to-em(650px))
+);

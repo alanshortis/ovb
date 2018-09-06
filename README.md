@@ -1,2 +1,3 @@
-# ovb.wp
-WordPress theme for ØVB
+# ØVB Website
+
+Temporary static site for ØVB.

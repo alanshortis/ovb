@@ -1,0 +1,18 @@
+body {
+  // sass-lint:disable-block no-vendor-prefixes
+  position: relative;
+  box-sizing: border-box;
+  background-color: $background;
+  font-family: $font-serif;
+  font-weight: 400;
+  font-size: $base-font-size;
+  line-height: 1.5;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: $black;
+  color: $white;
+}
