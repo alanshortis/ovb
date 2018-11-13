@@ -20,8 +20,6 @@ const header = require('gulp-header');
 const notifier = require('node-notifier');
 const buffer = require('vinyl-buffer');
 const source = require('vinyl-source-stream');
-const gutil = require('gulp-util');
-const ftp = require('vinyl-ftp');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 
@@ -163,23 +161,6 @@ gulp.task('watch', ['css', 'js', 'html'], () => {
   gulp.watch(`${paths.src.sass}/**/*.scss`, ['css']);
   gulp.watch(`${paths.src.js}/**/*.js`, ['js']);
   gulp.watch(`${paths.src.src}/**/*.html`, ['html']);
-});
-
-
-gulp.task('deploy', () => {
-  const args = require('minimist')(process.argv.slice(2));
-  const remotePath = '/websites/short.is/ovb/';
-  const conn = ftp.create({
-    host: args.host,
-    user: args.user,
-    password: args.password,
-    log: gutil.log
-  });
-  gulp.src(
-      ['.htaccess', 'index.html', '404.html', 'css/*', 'js/*', 'fonts/*', 'img/*'],
-      {buffer: false, dot: false, base: './'}
-    )
-    .pipe(conn.dest(remotePath));
 });
 
 
