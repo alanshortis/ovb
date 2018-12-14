@@ -33,4 +33,7 @@
       text-align: right;
     }
   }
+  &__social-links:not(:first-of-type) {
+    margin-left: ($content-margin / 2);
+  }
 }
