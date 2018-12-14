@@ -9,6 +9,22 @@
   @include mq(large) {
     grid-template-columns: repeat(3, $gram-width);
   }
+  &__item {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 320px;
+    @include mq(large-max) {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+  &__image {
+    min-height: 100%;
+  }
 }
 
 .spinner {

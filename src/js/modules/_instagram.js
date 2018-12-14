@@ -1,10 +1,8 @@
 function _gramTemplate(link, thumb, thumb2x) {
   return `
-    <div>
-      <a href="${link}">
-        <img src="${thumb}" srcset="${thumb2x} 2x" alt="@ovbcycling on Instagram">
-      </a>
-    </div>
+    <a href="${link}" class="ig-grid__item">
+      <img class="ig-grid__image" src="${thumb}" srcset="${thumb2x} 2x" alt="@ovbcycling on Instagram">
+    </a>
   `;
 }
 
@@ -12,7 +10,7 @@ function _gramTemplate(link, thumb, thumb2x) {
 export function amstergram() {
   const user = 1473021812;
   const token = '1473021812.9826de0.ceed01805c6a40b0a0680473956f8a6a';
-  const count = 6;
+  const count = 9;
   const gramContainer = document.getElementById('js-instagram');
   const scriptElement = document.createElement('script');
 
