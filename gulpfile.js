@@ -136,6 +136,11 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest(paths.dest.fonts));
 });
 
+gulp.task('favicon', () => {
+  return gulp.src(`${paths.src.src}/favicon.ico`)
+    .pipe(gulp.dest(paths.dest.dest));
+});
+
 
 gulp.task('html', ['icons'], () => {
   return gulp.src(`${paths.src.src}/*.html`)
@@ -164,4 +169,4 @@ gulp.task('watch', ['css', 'js', 'html'], () => {
 });
 
 
-gulp.task('default', ['clean', 'minify', 'uglify', 'images', 'html', 'fonts']);
+gulp.task('default', ['clean', 'minify', 'uglify', 'images', 'html', 'fonts', 'favicon']);
