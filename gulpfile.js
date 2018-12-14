@@ -114,7 +114,10 @@ gulp.task('uglify', ['js'], () => {
 gulp.task('icons', () => {
   return gulp.src(`${paths.src.svg}/*.svg`)
     .pipe(svgo({
-      plugins: [{removeStyleElement: true}]
+      plugins: [
+        {removeStyleElement: true},
+        {removeUselessStrokeAndFill: true}
+      ]
     }))
     .pipe(rename({
       prefix: 'icon-'
