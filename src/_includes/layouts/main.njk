@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="{{ site.description }}"/>
+    <meta property="og:title" content="{{ site.title }}"/>
+    <meta property="og:description" content="{{ site.description }}"/>
+    <meta property="og:url" content="{{ site.url }}"/>
+    <meta property="og:image" content="/img/og.png"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:creator" content="{{ site.twitter }}"/>
+    <link rel="icon" href="/icon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <svg class="icon--ovb">
+        <use xlink:href="img/icons.svg#ovb"></use>
+      </svg>
+    </header>
+    <ul role="navigation" class="site-nav">
+      <li class="site-nav__item">
+        <a href="#about">About</a>
+      </li>
+      <li class="site-nav__item grey">
+        <a href="#ethos">Ethos</a>
+      </li>
+      <li class="site-nav__item purple">
+        <a href="#racing">Racing</a>
+      </li>
+      <li class="site-nav__item blue">
+        <a href="#membership">Membership</a>
+      </li>
+    </ul>
+    <main id="main">
+      {{ content | safe }}
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__column">
+          <h3 class="blue">Committee</h3>
+          <dl>
+            <dt>Chairman</dt>
+            <dd>Ian Tatham</dd>
+            <dt>Secretary</dt>
+            <dd>Alicia Lisle</dd>
+            <dt>Treasurer</dt>
+            <dd>Chris Gough</dd>
+            <dt>Race Captain</dt>
+            <dd>Andy Sheret</dd>
+            <dt>Communications Director</dt>
+            <dd>Adam Travis</dd>
+            <dt>Social Secretary</dt>
+            <dd>Barry Smith</dd>
+          </dl>
+        </div>
+
+        <div class="site-footer__column">
+          <h3 class="purple">Contact Us</h3>
+          <dl>
+            <dt>General enquiries</dt>
+            <dd>
+              <a href="mailto:hello@ovbcycling.com?subject=&Oslash;VB: General Enquiry">hello@ovbcycling.com</a>
+            </dd>
+            <dt>Racing enquiries</dt>
+            <dd>
+              <a href="mailto:racing@ovbcycling.com?subject=&Oslash;VB: Racing Enquiry">racing@ovbcycling.com</a>
+            </dd>
+            <dt>Membership enquiries</dt>
+            <dd>
+              <a href="mailto:membership@ovbcycling.com?subject=&Oslash;VB: Membership Enquiry">membership@ovbcycling.com</a>
+            </dd>
+          </dl>
+        </div>
+
+        <div class="site-footer__column site-footer__column--right">
+          <h3 class="green">Follow us</h3>
+          <a href="https://www.facebook.com/ovbcycling/" class="site-footer__social-link" aria-label="Facebook">
+            <svg class="icon--social">
+              <use xlink:href="img/icons.svg#facebook"></use>
+            </svg>
+          </a>
+          <a href="https://twitter.com/ovbcycling" class="site-footer__social-link" aria-label="Twitter">
+            <svg class="icon--social">
+              <use xlink:href="img/icons.svg#instagram"></use>
+            </svg>
+          </a>
+          <a href="https://www.strava.com/clubs/ovbcycling" class="site-footer__social-link" aria-label="Strava">
+            <svg class="icon--social">
+              <use xlink:href="img/icons.svg#strava"></use>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/ovbcycling/" class="site-footer__social-link" aria-label="Instagram">
+            <svg class="icon--social">
+              <use xlink:href="img/icons.svg#twitter"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
