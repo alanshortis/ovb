@@ -234,8 +234,9 @@ h3 {
 }
 
 .title-container {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -248,7 +249,7 @@ h3 {
   text-shadow: 0 0 10px var(--very-black);
 }
 
-@media (min-width: 550px) {
+@media (min-width: 900px) {
   .title-container h1 {
     font-size: 5vw;
   }
