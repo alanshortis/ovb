@@ -226,6 +226,51 @@ h4 {
   max-width: var(--half-width);
 }
 
+.photo-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.photo-section--with-title {
+  max-height: calc(100vh - (var(--header-height) + var(--nav-height)));
+}
+
+.title-container {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.title-container h1 {
+  align-self: center;
+  color: var(--white);
+  font-size: 7.5vw;
+  text-shadow: 0 0 10px var(--very-black);
+}
+
+@media (min-width: 550px) {
+  .title-container h1 {
+    font-size: 5vw;
+  }
+}
+
+.photo-section__title {
+  position: absolute;
+  color: var(--white);
+  margin: auto;
+}
+
+.photo-section__img {
+  width: 100%;
+  max-width: 1280px;
+  bottom: 0;
+}
+
 .how-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
