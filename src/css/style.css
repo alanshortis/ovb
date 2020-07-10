@@ -124,24 +124,18 @@ p a {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   font-family: var(--font-sans);
   text-transform: uppercase;
 }
 
 h2,
-h3,
-h4 {
+h3 {
   font-size: 2rem;
   margin-bottom: var(--content-margin);
 }
 
 h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
   font-size: 0.9rem;
 }
 
@@ -207,8 +201,11 @@ h4 {
   align-items: center;
   text-align: center;
   background-color: var(--background--mid);
-  min-height: calc(100vh - var(--nav-height));
+  min-height: 100vh;
   padding: calc(var(--content-margin) * 2) var(--content-margin);
+  border-top: var(--nav-height) solid transparent;
+  margin-top: calc(var(--nav-height) * -1);
+  background-clip: padding-box;
 }
 
 .site-section--column {
@@ -217,11 +214,6 @@ h4 {
 
 .site-section--light {
   background-color: var(--background);
-}
-
-.site-section__anchor {
-  position: absolute;
-  top: calc(var(--nav-height) * -1);
 }
 
 .site-section__inner {
