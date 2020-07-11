@@ -62,41 +62,28 @@
           <dl>
             <dt>General enquiries</dt>
             <dd>
-              <a href="mailto:hello@ovbcycling.com?subject=&Oslash;VB: General Enquiry">hello@ovbcycling.com</a>
+              <a href="mailto:{{ site.email.general }}?subject=&Oslash;VB: General Enquiry">{{ site.email.general }}</a>
             </dd>
             <dt>Racing enquiries</dt>
             <dd>
-              <a href="mailto:racing@ovbcycling.com?subject=&Oslash;VB: Racing Enquiry">racing@ovbcycling.com</a>
+              <a href="mailto:{{ site.email.racing }}?subject=&Oslash;VB: Racing Enquiry">{{ site.email.racing }}</a>
             </dd>
             <dt>Membership enquiries</dt>
             <dd>
-              <a href="mailto:membership@ovbcycling.com?subject=&Oslash;VB: Membership Enquiry">membership@ovbcycling.com</a>
+              <a href="mailto:{{ site.email.membership }}?subject=&Oslash;VB: Membership Enquiry">{{ site.email.membership }}</a>
             </dd>
           </dl>
         </div>
 
         <div class="site-footer__column site-footer__column--right">
           <h3 class="green">Follow us</h3>
-          <a href="https://www.facebook.com/ovbcycling/" class="site-footer__social-link" aria-label="Facebook">
-            <svg class="icon--social">
-              <use xlink:href="img/icons.svg#facebook"></use>
-            </svg>
-          </a>
-          <a href="https://twitter.com/ovbcycling" class="site-footer__social-link" aria-label="Twitter">
-            <svg class="icon--social">
-              <use xlink:href="img/icons.svg#instagram"></use>
-            </svg>
-          </a>
-          <a href="https://www.strava.com/clubs/ovbcycling" class="site-footer__social-link" aria-label="Strava">
-            <svg class="icon--social">
-              <use xlink:href="img/icons.svg#strava"></use>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/ovbcycling/" class="site-footer__social-link" aria-label="Instagram">
-            <svg class="icon--social">
-              <use xlink:href="img/icons.svg#twitter"></use>
-            </svg>
-          </a>
+          {%- for key, item in site.social %}
+            <a href="{{ item }}" class="site-footer__social-link" aria-label="{{ key }}">
+              <svg class="icon--social">
+                <use xlink:href="img/icons.svg#{{ key }}"></use>
+              </svg>
+            </a>
+          {%- endfor %}
         </div>
       </div>
     </footer>

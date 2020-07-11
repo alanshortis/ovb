@@ -4,4 +4,15 @@ module.exports = {
   description: 'ØVB is a cycling club',
   url: 'https://ovbcycling.com',
   twitter: '@ovbcycling',
+  email: {
+    general: 'hello@ovbcycling.com',
+    racing: 'racing@ovbcycling.com',
+    membership: 'membership@ovbcycling.com',
+  },
+  social: {
+    facebook: 'https://www.facebook.com/ovbcycling/',
+    instagram: 'https://www.instagram.com/ovbcycling/',
+    strava: 'https://www.strava.com/clubs/ovbcycling',
+    twitter: 'https://twitter.com/ovbcycling',
+  },
 };
