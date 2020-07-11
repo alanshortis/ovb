@@ -255,6 +255,7 @@ h3 {
   background-color: var(--background--dark);
   color: var(--type--light);
   padding: var(--content-margin);
+  padding-bottom: calc(env(safe-area-inset-bottom) + var(--content-margin));
 }
 
 @media (min-width: 800px) {
