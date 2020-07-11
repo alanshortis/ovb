@@ -15,4 +15,26 @@ module.exports = {
     strava: 'https://www.strava.com/clubs/ovbcycling',
     twitter: 'https://twitter.com/ovbcycling',
   },
+  committee: [
+    {
+      role: 'Chairman',
+      name: 'Ian Tatham',
+    },
+    {
+      role: 'Secretary',
+      name: 'Alicia Lisle',
+    },
+    {
+      role: 'Treasurer',
+      name: 'Alicia Lisle',
+    },
+    {
+      role: 'Race Captain',
+      name: 'Andy Sheret',
+    },
+    {
+      role: 'Communications Director',
+      name: 'Adam Travis',
+    },
+  ],
 };

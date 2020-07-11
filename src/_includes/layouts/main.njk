@@ -42,18 +42,10 @@
         <div class="site-footer__column">
           <h3 class="blue">Committee</h3>
           <dl>
-            <dt>Chairman</dt>
-            <dd>Ian Tatham</dd>
-            <dt>Secretary</dt>
-            <dd>Alicia Lisle</dd>
-            <dt>Treasurer</dt>
-            <dd>Chris Gough</dd>
-            <dt>Race Captain</dt>
-            <dd>Andy Sheret</dd>
-            <dt>Communications Director</dt>
-            <dd>Adam Travis</dd>
-            <dt>Social Secretary</dt>
-            <dd>Barry Smith</dd>
+            {%- for member in site.committee %}
+              <dt>{{ member.role }}</dt>
+              <dd>{{ member.name }}</dd>
+            {%- endfor %}
           </dl>
         </div>
 
