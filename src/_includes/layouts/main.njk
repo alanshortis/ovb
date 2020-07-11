@@ -12,7 +12,7 @@
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:creator" content="{{ site.twitter }}"/>
     <link rel="icon" href="/icon.png"/>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style{% if site.isProd %}.min{% endif %}.css">
   </head>
   <body>
     <header class="site-header">

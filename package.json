@@ -4,15 +4,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "eleventy",
+    "build": "ELEVENTY_ENV=production eleventy && npm run uglify",
     "dev": "eleventy --serve --quiet",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "uglify": "uglifycss dist/css/style.css > dist/css/style.min.css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alanshortis/ovb.git"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0"
+    "@11ty/eleventy": "^0.11.0",
+    "uglifycss": "0.0.29"
   }
 }
