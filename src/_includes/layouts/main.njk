@@ -16,7 +16,7 @@
   </head>
   <body>
     <header class="site-header">
-      <svg class="icon--ovb">
+      <svg class="icon--ovb" aria-label="&Oslash;VB">
         <use xlink:href="img/icons.svg#ovb"></use>
       </svg>
     </header>
@@ -70,9 +70,9 @@
         <div class="site-footer__column site-footer__column--right">
           <h3 class="green">Follow us</h3>
           {%- for key, item in site.social %}
-            <a href="{{ item }}" class="site-footer__social-link" target="_blank" rel="noopener noreferrer me">
+            <a href="{{ item }}" class="site-footer__social-link" rel="me">
               <svg class="icon--social" aria-labelledby="social-{{ key }}">
-                <title id="social-{{ key }}">{{ key }} title</title>
+                <title id="social-{{ key }}">{{ key }}</title>
                 <use xlink:href="img/icons.svg#{{ key }}"></use>
               </svg>
             </a>
