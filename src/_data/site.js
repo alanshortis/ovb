@@ -26,7 +26,7 @@ module.exports = {
     },
     {
       role: 'Treasurer',
-      name: 'Alicia Lisle',
+      name: 'Chris Gough',
     },
     {
       role: 'Race Captain',
